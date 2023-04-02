@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import com.google.gson.Gson
 import com.yusuf.satelliteapp.base.BaseViewModel
 import com.yusuf.satelliteapp.models.SatelliteListModel
+import com.yusuf.satelliteapp.models.SatelliteListModelItem
 
 class SatelliteListViewModel: BaseViewModel() {
 
@@ -14,5 +15,9 @@ class SatelliteListViewModel: BaseViewModel() {
     fun setSatelliteList(data: String) {
         val gson = Gson()
         _satelliteList.value = (gson.fromJson(data, SatelliteListModel::class.java))
+    }
+
+    fun satelliteListClick(satellite: SatelliteListModelItem) {
+
     }
 }

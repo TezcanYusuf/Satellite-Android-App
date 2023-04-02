@@ -7,6 +7,7 @@ import com.yusuf.satelliteapp.base.BaseFragment
 import com.yusuf.satelliteapp.databinding.FragmentSatelliteListBinding
 import com.yusuf.satelliteapp.extensions.observe
 import com.yusuf.satelliteapp.models.SatelliteListModel
+import com.yusuf.satelliteapp.ui.list.adapter.SatelliteAdapter
 
 class SatelliteListFragment : BaseFragment<SatelliteListViewModel, FragmentSatelliteListBinding>() {
 
@@ -29,8 +30,7 @@ class SatelliteListFragment : BaseFragment<SatelliteListViewModel, FragmentSatel
     }
 
     private fun onSatelliteListChanged(satelliteListModel: SatelliteListModel) {
-        Log.e("dattaa", satelliteListModel.toString())
-
+        viewBinding.rvSatellite.adapter = SatelliteAdapter(satelliteListModel, viewModel)
     }
 
 }
