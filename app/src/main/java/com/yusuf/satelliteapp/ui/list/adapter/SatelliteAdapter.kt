@@ -1,11 +1,14 @@
 package com.yusuf.satelliteapp.ui.list.adapter
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.yusuf.satelliteapp.databinding.ItemSatelliteBinding
 import com.yusuf.satelliteapp.models.SatelliteListModelItem
 import com.yusuf.satelliteapp.ui.list.SatelliteListViewModel
+import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 
 class SatelliteAdapter(
     private var list: ArrayList<SatelliteListModelItem>,
@@ -31,6 +34,9 @@ class SatelliteAdapter(
         RecyclerView.ViewHolder(binding.root) {
         fun bind(item: SatelliteListModelItem) {
             binding.satellite = item
+            binding.satelliteItem.setOnClickListener {
+                viewModel.satelliteListClick(item)
+            }
             binding.executePendingBindings()
         }
     }

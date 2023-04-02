@@ -15,10 +15,11 @@
     </data>
 
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/satelliteItem"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="@{() -> viewModel.satelliteListClick(satellite)}"
+        android:orientation="horizontal"
         android:background="@{satellite.active ? @color/white : @color/red}">
 
         <androidx.appcompat.widget.AppCompatImageView
@@ -29,6 +30,8 @@
             android:layout_marginTop="@dimen/margin_20dp"
             android:layout_marginBottom="@dimen/margin_20dp"
             android:src="@drawable/satellite"
+            android:clickable="false"
+            android:focusable="false"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -36,11 +39,14 @@
         </androidx.appcompat.widget.AppCompatImageView>
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/margin_20dp"
             android:layout_marginStart="@dimen/margin_20dp"
+            android:layout_gravity="center"
             android:textStyle="bold"
+            android:clickable="false"
+            android:focusable="false"
             android:text="@{satellite.name}"
             app:layout_constraintBottom_toBottomOf="@+id/appCompatImageView"
             app:layout_constraintEnd_toEndOf="parent"
@@ -52,5 +58,5 @@
 
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.appcompat.widget.LinearLayoutCompat>
 </layout>

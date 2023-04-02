@@ -8,7 +8,11 @@ import com.yusuf.satelliteapp.databinding.FragmentSatelliteListBinding
 import com.yusuf.satelliteapp.extensions.observe
 import com.yusuf.satelliteapp.models.SatelliteListModel
 import com.yusuf.satelliteapp.ui.list.adapter.SatelliteAdapter
+import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 
+@ExperimentalCoroutinesApi
+@AndroidEntryPoint
 class SatelliteListFragment : BaseFragment<SatelliteListViewModel, FragmentSatelliteListBinding>() {
 
     override fun viewModelClass() = SatelliteListViewModel::class.java

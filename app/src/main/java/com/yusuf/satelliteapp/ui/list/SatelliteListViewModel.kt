@@ -1,5 +1,6 @@
 package com.yusuf.satelliteapp.ui.list
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.google.gson.Gson
@@ -18,6 +19,6 @@ class SatelliteListViewModel: BaseViewModel() {
     }
 
     fun satelliteListClick(satellite: SatelliteListModelItem) {
-
+        Log.e("Satellite Item Go Detail", "$satellite ----")
     }
 }
